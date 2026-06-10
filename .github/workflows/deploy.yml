@@ -20,6 +20,6 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.PORT }}
-
-          source: "index.html,css,img"
-          target: "/home/c0522930/public_html/t-nakanishi-dev.com/works/html-css/codejump/profile/"
+          source: "index.html,css/**,img/**"
+          target: "/home/c0522930/public_html/t-nakanishi-dev.com/works/html-css/codejump/profile"
+          strip_components: 0
