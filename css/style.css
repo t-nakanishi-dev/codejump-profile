@@ -1,0 +1,210 @@
+@charset "UTF-8";
+
+/* =========================
+   共通設定
+========================= */
+
+/* ブラウザ標準の文字サイズ（16px）を使用 */
+html {
+  font-size: 100%;
+}
+
+/* サイト全体の文字色・文字サイズ */
+body {
+  color: #383e45;
+  font-size: 0.9rem;
+}
+
+/* リンクの下線を削除 */
+a {
+  text-decoration: none;
+}
+
+/* 画像が親要素からはみ出さないようにする */
+img {
+  max-width: 100%;
+}
+
+/* liの黒丸を削除 */
+li {
+  list-style: none;
+}
+
+/* ロゴエリア */
+.site-title {
+  width: 120px; /* ロゴ画像の幅 */
+  line-height: 1px; /* 余計な高さをなくす */
+  padding: 10px 0; /* 上下の余白 */
+}
+
+/* ロゴ全体をクリックできるようにする */
+.site-title a {
+  display: block;
+}
+
+/* 各セクションの見出し */
+.section-title {
+  display: inline-block; /* 下線を文字幅だけにする */
+  font-size: 2rem; /* 約32px */
+  margin-bottom: 60px; /* 下余白 */
+  border-bottom: solid 1px #383e45; /* 下線 */
+}
+
+/* About・Bicycle内の小見出し */
+.content-title {
+  font-size: 1rem;
+  margin: 10px 0;
+}
+
+/* コンテンツ共通の横幅制御 */
+.wrapper {
+  max-width: 960px; /* 最大幅 */
+  margin: 0 auto 100px; /* 中央寄せ + 下余白 */
+  padding: 0 4%; /* 左右の余白 */
+  text-align: center; /* 文字中央寄せ */
+}
+
+/*-------------------------------------------
+ヘッダー
+-------------------------------------------*/
+
+/* ロゴとナビを横並び */
+#header {
+  display: flex;
+  justify-content: space-between; /* 左右に配置 */
+  align-items: center; /* 縦方向中央揃え */
+  margin: 0 auto;
+}
+
+/* ナビゲーションを横並び */
+#header ul {
+  display: flex;
+  padding: 10px 0;
+}
+
+/* メニュー間の余白 */
+#header li {
+  margin-left: 30px;
+}
+
+/* メニューの文字色 */
+#header li a {
+  color: #24292e;
+}
+
+/* ホバー時に少し薄くする */
+#header li a:hover {
+  opacity: 0.7;
+}
+
+/*-------------------------------------------
+Mainvisual
+-------------------------------------------*/
+
+/* メインビジュアル下の余白 */
+#mainvisual {
+  margin-bottom: 80px;
+}
+
+/* メイン画像 */
+#mainvisual img {
+  width: 100%; /* 横幅いっぱい */
+  max-width: 1920px; /* 最大1920px */
+  height: 600px; /* 高さ固定 */
+  object-fit: cover; /* 画像をトリミングして表示 */
+}
+
+/*-------------------------------------------
+About
+-------------------------------------------*/
+
+/* 画像とテキストを横並び */
+#about .content {
+  display: flex;
+  justify-content: center; /* 横方向中央 */
+  align-items: center; /* 縦方向中央 */
+}
+
+/* プロフィール画像 */
+#about img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%; /* 円形にする */
+  margin-right: 30px;
+}
+
+/* テキストだけ左寄せ */
+#about .text {
+  text-align: left;
+}
+
+/*-------------------------------------------
+Bicycle
+-------------------------------------------*/
+
+/* 3つの記事を横並び */
+#bicycle ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* 各記事の幅 */
+#bicycle li {
+  width: 32%;
+}
+
+/*-------------------------------------------
+footer
+-------------------------------------------*/
+
+/* フッター */
+#footer {
+  font-size: 0.5rem; /* 小さい文字 */
+  padding: 10px 0;
+  text-align: center;
+}
+
+/*-------------------------------------------
+SP（スマホ）
+-------------------------------------------*/
+
+@media screen and (max-width: 600px) {
+  /*-------------------------------------------
+  Mainvisual
+  -------------------------------------------*/
+
+  /* スマホ画面いっぱいに画像を表示
+     （画面高さ - ヘッダー高さ） */
+  #mainvisual img {
+    height: calc(100vh - 60px);
+  }
+
+  /*-------------------------------------------
+  About
+  -------------------------------------------*/
+
+  /* 横並び → 縦並び */
+  #about .content {
+    flex-direction: column;
+  }
+
+  /* PC用の右余白を削除 */
+  #about img {
+    margin-right: 0;
+  }
+
+  /*-------------------------------------------
+  Bicycle
+  -------------------------------------------*/
+
+  /* 横並び → 縦並び */
+  #bicycle ul {
+    flex-direction: column;
+  }
+
+  /* 1列表示 */
+  #bicycle li {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+}
